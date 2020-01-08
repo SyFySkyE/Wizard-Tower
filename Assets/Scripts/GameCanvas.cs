@@ -19,6 +19,12 @@ public class GameCanvas : MonoBehaviour
         player.OnCanPickUp += Player_canPickUp;
         player.OnCanDrop += Player_OnCanDrop;
         player.OnNoContext += Player_OnNoContext;
+        player.OnRead += Player_OnRead;
+    }
+
+    private void Player_OnRead(string obj)
+    {
+        centerText.text = obj;
     }
 
     private void Player_OnNoContext()

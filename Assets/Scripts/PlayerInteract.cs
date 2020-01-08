@@ -16,6 +16,7 @@ public class PlayerInteract : MonoBehaviour
 
     public event System.Action OnCanPickUp;
     public event System.Action OnCanDrop;
+    public event System.Action<string> OnRead;
     public event System.Action OnNoContext; // No object close enough to show contextual UI tip
 
     // Start is called before the first frame update
@@ -25,19 +26,27 @@ public class PlayerInteract : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() // Needs to be refactored
     {
         RaycastHit hit;
         Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
 
-        if (Physics.Raycast(ray, out hit, maxInteractDistance) && hit.collider.transform.tag == "Pickup" && !isHolding)
+        if (Physics.Raycast(ray, out hit, maxInteractDistance) && !isHolding)
         {
-            OnCanPickUp();
-            if (Input.GetKeyDown(KeyCode.E))
+            if (hit.collider.transform.tag == "Pickup")
             {
-                boxObj = hit.collider.transform.GetComponent<PickupObject>();
-                boxObj.Interact();
-                isHolding = true;
+                OnCanPickUp();
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    boxObj = hit.collider.transform.GetComponent<PickupObject>();
+                    boxObj.Interact();
+                    isHolding = true;
+                }
+            }    
+            else if (hit.collider.transform.tag == "Read Obj")
+            {
+                ReadObject readObject = hit.collider.transform.GetComponent<ReadObject>();
+                OnRead(readObject.ReturnReadObjDescription());
             }
         }
         else if (isHolding && boxObj)

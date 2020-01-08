@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - Pickup
+  - Read Obj
   layers:
   - Default
   - TransparentFX
