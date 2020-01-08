@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1200528352768398340}
   - component: {fileID: 1200528352768398339}
   m_Layer: 0
-  m_Name: Red
+  m_Name: Red Box
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200528352768398345}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 1.5, z: 4}
+  m_LocalPosition: {x: 2.5, y: 1.5, z: -5}
   m_LocalScale: {x: 0.1, y: 0.6, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1200528353349181493}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1200528352918915539}
   - component: {fileID: 1200528352918915538}
   m_Layer: 0
-  m_Name: Green
+  m_Name: Green Box
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200528352918915544}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1.5, z: 4}
+  m_LocalPosition: {x: 0.5, y: 1.5, z: -5}
   m_LocalScale: {x: 0.1, y: 0.6, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1200528353349181493}
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 1200528353379941463}
   - component: {fileID: 1200528353379941462}
   m_Layer: 0
-  m_Name: Blue
+  m_Name: Blue Box
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,7 +304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200528353379941468}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 1.5, z: 4}
+  m_LocalPosition: {x: -1.5, y: 1.5, z: -5}
   m_LocalScale: {x: 0.1, y: 0.6, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1200528353349181493}

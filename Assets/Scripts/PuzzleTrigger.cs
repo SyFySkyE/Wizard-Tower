@@ -8,6 +8,7 @@ public class PuzzleTrigger : MonoBehaviour
     [SerializeField] private GameObject correctObjTrigger;
 
     public event System.Action OnPuzzleComplete;
+    public event System.Action OnObjRemove; // If player removes obj off of correct place
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,14 @@ public class PuzzleTrigger : MonoBehaviour
         if (collision.gameObject == correctObjTrigger)
         {
             OnPuzzleComplete();
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject == correctObjTrigger)
+        {
+            OnObjRemove();
         }
     }
 }
