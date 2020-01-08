@@ -19,7 +19,13 @@ public class DoorPuzzle : MonoBehaviour
         foreach( PuzzleTrigger puzzle in puzzleConditions)
         {
             puzzle.OnPuzzleComplete += Puzzle_OnPuzzleComplete;
+            puzzle.OnObjRemove += Puzzle_OnObjRemove;
         }
+    }
+
+    private void Puzzle_OnObjRemove()
+    {
+        numberOfConditionsMet--; // If puzzleObj *was* in correct place but player moves it off
     }
 
     private void Puzzle_OnPuzzleComplete()

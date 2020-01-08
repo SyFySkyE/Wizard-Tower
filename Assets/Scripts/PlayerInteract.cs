@@ -35,7 +35,6 @@ public class PlayerInteract : MonoBehaviour
                 boxObj = hit.collider.transform.GetComponent<PickupObject>();
                 boxObj.Interact();
                 isHolding = true;
-                Debug.Log("dwdawd");
             }
         }
 
@@ -46,7 +45,6 @@ public class PlayerInteract : MonoBehaviour
                 boxObj.Interact();
                 boxObj = null;
                 isHolding = false;
-                Debug.Log("owowow");
             }
         }        
     }
