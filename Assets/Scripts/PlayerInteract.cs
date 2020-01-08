@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {    
+    [Header("How close does the player need to be interact with objects, in meters")]
     [SerializeField] private float maxInteractDistance = 2f;
-    [SerializeField] private Camera mainCamera;
+    [Header("The player's childed \"Hand Pos\" that pickup Obj's follow")]
     public Transform handPos;
+
+    private Camera mainCamera;
 
     private bool isHolding = false;    
 
@@ -15,7 +18,7 @@ public class PlayerInteract : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        mainCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -24,17 +27,13 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
 
-
         if (Physics.Raycast(ray, out hit, maxInteractDistance) && hit.collider.transform.tag == "Pickup" && !isHolding)
         {
-            Debug.Log("dwdwa");
             if (Input.GetKeyDown(KeyCode.E))
             {
                 hit.collider.transform.GetComponent<PickupObject>().Interact();
             }
-        }
-
-       
+        }       
     }
 
     private void FixedUpdate()

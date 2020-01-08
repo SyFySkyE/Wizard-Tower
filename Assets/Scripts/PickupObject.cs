@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PickupObject : MonoBehaviour
 {
-    [SerializeField] private PlayerInteract player;
-
     private bool isBeingHeld = false;
     private Rigidbody boxRb;
+    private PlayerInteract player;
 
     // Start is called before the first frame update
     void Start()
     {
         boxRb = GetComponent<Rigidbody>();
+        player = FindObjectOfType<PlayerInteract>();
     }
 
     // Update is called once per frame
