@@ -26,7 +26,12 @@ public class DoorPuzzle : MonoBehaviour
         numberOfConditionsMet++;
         if (numberOfConditionsMet == puzzleConditions.Length)
         {
-            doorAnimator.SetTrigger("Open");
+            SolvePuzzle();
         }
+    }
+
+    private void SolvePuzzle()
+    {
+        doorAnimator.SetTrigger("Open");
     }
 }
