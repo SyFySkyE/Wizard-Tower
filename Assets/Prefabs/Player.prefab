@@ -110,12 +110,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 8968258135917390978}
   movementSettings:
-    ForwardSpeed: 8
-    BackwardSpeed: 4
-    StrafeSpeed: 4
-    RunMultiplier: 2
+    ForwardSpeed: 4
+    BackwardSpeed: 2
+    StrafeSpeed: 2
+    RunMultiplier: 1.5
     RunKey: 304
-    JumpForce: 50
+    JumpForce: 25
     SlopeCurveModifier:
       serializedVersion: 2
       m_Curve:
@@ -178,7 +178,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxInteractDistance: 2.5
-  mainCamera: {fileID: 8968258135917390978}
   handPos: {fileID: 8968258135614342344}
 --- !u!1 &8968258135915753126
 GameObject:

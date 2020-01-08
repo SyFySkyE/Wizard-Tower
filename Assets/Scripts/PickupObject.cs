@@ -22,10 +22,6 @@ public class PickupObject : MonoBehaviour
         {
             StayInPlayerHand();
         }
-        else
-        {
-            Drop();
-        }
     }
 
     private void Drop()
@@ -45,5 +41,9 @@ public class PickupObject : MonoBehaviour
     public void Interact()
     {
         isBeingHeld = !isBeingHeld;
+        if (!isBeingHeld)
+        {
+            Drop();
+        }
     }
 }
