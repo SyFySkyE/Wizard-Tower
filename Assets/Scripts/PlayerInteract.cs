@@ -12,10 +12,12 @@ public class PlayerInteract : MonoBehaviour
     private Camera mainCamera;
     private PickupObject boxObj;
 
-    private bool isHolding = false;    
+    private bool isHolding = false; // TODO switch to states
+    private bool isReading = false;
 
     public event System.Action OnCanPickUp;
     public event System.Action OnCanDrop;
+    public event System.Action OnCanInteract;
     public event System.Action<string> OnRead;
     public event System.Action OnNoContext; // No object close enough to show contextual UI tip
 
@@ -43,10 +45,27 @@ public class PlayerInteract : MonoBehaviour
                     isHolding = true;
                 }
             }    
-            else if (hit.collider.transform.tag == "Read Obj")
+            else if (hit.collider.transform.tag == "Read Obj" )
             {
-                ReadObject readObject = hit.collider.transform.GetComponent<ReadObject>();
-                OnRead(readObject.ReturnReadObjDescription());
+                if (!isReading)
+                {
+                    OnCanInteract();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        isReading = true;
+
+                    }
+                }
+                
+                else  // Messy
+                {
+                    ReadObject readObject = hit.collider.transform.GetComponent<ReadObject>();
+                    OnRead(readObject.ReturnReadObjDescription());
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        isReading = false;
+                    }
+                }
             }
         }
         else if (isHolding && boxObj)
@@ -63,10 +82,6 @@ public class PlayerInteract : MonoBehaviour
         {
             OnNoContext();
         }
-    }
-
-    private void FixedUpdate()
-    {
         
     }
 }
