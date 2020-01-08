@@ -14,7 +14,9 @@ public class PlayerInteract : MonoBehaviour
 
     private bool isHolding = false;    
 
-    // public event System.Action canPickUp; UI observer stuff. Let's not get ahead of ourselves.
+    public event System.Action OnCanPickUp;
+    public event System.Action OnCanDrop;
+    public event System.Action OnNoContext; // No object close enough to show contextual UI tip
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,7 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, maxInteractDistance) && hit.collider.transform.tag == "Pickup" && !isHolding)
         {
+            OnCanPickUp();
             if (Input.GetKeyDown(KeyCode.E))
             {
                 boxObj = hit.collider.transform.GetComponent<PickupObject>();
@@ -37,16 +40,20 @@ public class PlayerInteract : MonoBehaviour
                 isHolding = true;
             }
         }
-
         else if (isHolding && boxObj)
         {
+            OnCanDrop();
             if (Input.GetKeyDown(KeyCode.E))
             {
                 boxObj.Interact();
                 boxObj = null;
                 isHolding = false;
             }
-        }        
+        }
+        else
+        {
+            OnNoContext();
+        }
     }
 
     private void FixedUpdate()
