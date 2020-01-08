@@ -689,6 +689,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 60.000004
       objectReference: {fileID: 0}
+    - target: {fileID: 936362736699539073, guid: ca26a5a1462ce0142869aac6dd66d817,
+        type: 3}
+      propertyPath: description
+      value: '"Dear Diary, I''m stress testing you.\nfe fefe\tvefeffe\n\n\n\nfef wefe"""dwd   wddw   " '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca26a5a1462ce0142869aac6dd66d817, type: 3}
 --- !u!1001 &1200528352619613631
