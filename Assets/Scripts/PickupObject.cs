@@ -29,6 +29,7 @@ public class PickupObject : MonoBehaviour
         boxRb.velocity = Vector3.zero;
         boxRb.useGravity = true;
         boxRb.constraints = RigidbodyConstraints.None;
+        isBeingHeld = false;
     }
 
     private void StayInPlayerHand()
@@ -40,10 +41,18 @@ public class PickupObject : MonoBehaviour
 
     public void Interact()
     {
-        isBeingHeld = !isBeingHeld;
         if (!isBeingHeld)
+        {
+            Pickup();
+        }
+        else
         {
             Drop();
         }
+    }
+
+    public void Pickup()
+    {
+        isBeingHeld = true;
     }
 }

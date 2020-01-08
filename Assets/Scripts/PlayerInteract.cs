@@ -28,16 +28,6 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
 
-        if (isHolding && boxObj)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                boxObj.Interact();
-                boxObj = null;
-                isHolding = false;
-            }
-        }
-
         if (Physics.Raycast(ray, out hit, maxInteractDistance) && hit.collider.transform.tag == "Pickup" && !isHolding)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -45,8 +35,20 @@ public class PlayerInteract : MonoBehaviour
                 boxObj = hit.collider.transform.GetComponent<PickupObject>();
                 boxObj.Interact();
                 isHolding = true;
+                Debug.Log("dwdawd");
             }
-        }       
+        }
+
+        else if (isHolding && boxObj)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                boxObj.Interact();
+                boxObj = null;
+                isHolding = false;
+                Debug.Log("owowow");
+            }
+        }        
     }
 
     private void FixedUpdate()
