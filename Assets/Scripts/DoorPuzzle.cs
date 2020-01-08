@@ -8,12 +8,13 @@ public class DoorPuzzle : MonoBehaviour
     [SerializeField] private PuzzleTrigger[] puzzleConditions;
 
     private Animator doorAnimator;
-
+    private AudioSource dooraudiosource;
     private int numberOfConditionsMet = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        dooraudiosource = GetComponent<AudioSource>();
         doorAnimator = GetComponent<Animator>();
         foreach( PuzzleTrigger puzzle in puzzleConditions)
         {
@@ -33,5 +34,6 @@ public class DoorPuzzle : MonoBehaviour
     private void SolvePuzzle()
     {
         doorAnimator.SetTrigger("Open");
+        dooraudiosource.Play();
     }
 }
