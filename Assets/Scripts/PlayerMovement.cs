@@ -5,21 +5,26 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private AudioSource playerAudioSource;
+    private Rigidbody playerRb;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerRb = GetComponent<Rigidbody>();
         playerAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) && !playerAudioSource.isPlaying)
+        if (playerRb.velocity != Vector3.zero)
         {
-            playerAudioSource.Play();
+            if (!playerAudioSource.isPlaying)
+            {
+                playerAudioSource.Play();
+            }            
         }
-        else if (!Input.GetKey(KeyCode.W))
+        else 
         {
             playerAudioSource.Stop();
         }
