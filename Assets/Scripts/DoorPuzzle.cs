@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DoorPuzzle : MonoBehaviour
 {
@@ -22,7 +20,7 @@ public class DoorPuzzle : MonoBehaviour
     {
         dooraudiosource = GetComponent<AudioSource>();
         doorAnimator = GetComponent<Animator>();
-        foreach( PuzzleTrigger puzzle in puzzleConditions)
+        foreach (PuzzleTrigger puzzle in puzzleConditions)
         {
             puzzle.OnPuzzleComplete += Puzzle_OnPuzzleComplete;
             puzzle.OnObjRemove += Puzzle_OnObjRemove;

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,15 +15,15 @@ namespace UnityStandardAssets.SceneUtils
         private bool m_SlowMo;
 
 
-       	void Start()
+        void Start()
         {
-			m_SlowMo = false;
+            m_SlowMo = false;
         }
 
-		void OnDestroy()
-		{
-			Time.timeScale = 1;
-		}
+        void OnDestroy()
+        {
+            Time.timeScale = 1;
+        }
 
         public void ChangeSpeed()
         {
@@ -40,7 +39,7 @@ namespace UnityStandardAssets.SceneUtils
 
             button.targetGraphic = image;
 
-			Time.timeScale = m_SlowMo ? slowSpeed : fullSpeed;
+            Time.timeScale = m_SlowMo ? slowSpeed : fullSpeed;
         }
     }
 }

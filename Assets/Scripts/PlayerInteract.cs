@@ -1,19 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
-{    
+{
     [Header("How close does the player need to be interact with objects, in meters")]
     [SerializeField] private float maxInteractDistance = 2f;
+
     [Header("The player's childed \"Hand Pos\" that pickup Obj's follow")]
     public Transform handPos;
 
     private Camera mainCamera;
     private PickupObject boxObj;
 
-    private bool isHolding = false; // TODO switch to states
-    private bool isReading = false;
+    private enum PlayerState { isHolding, isReading, None }
+    private PlayerState currentState = PlayerState.None;
 
     public event System.Action OnCanPickUp;
     public event System.Action OnCanDrop;
@@ -28,60 +27,96 @@ public class PlayerInteract : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() // Needs to be refactored
+    void Update()
+    {  
+        CastRay();
+    }
+
+    private void CastRay()
+    {        
+        RaycastHit hit; // Used to store what the ray hits
+        Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward); // Casts a ray from the forward center of camera
+
+        switch (currentState)
+        {
+            case PlayerState.None:
+                if (Physics.Raycast(ray, out hit, maxInteractDistance))
+                {
+                    switch (hit.collider.transform.tag)
+                    {
+                        case "Pickup":
+                            PlayerLookAtPickup(hit);
+                            break;
+                        case "Read Obj":
+                            PlayerLookAtReadable();
+                            break;
+                        default:
+                            OnNoContext();
+                            break;
+                    }
+                }
+                else
+                {
+                    OnNoContext();
+                }
+                break;            
+
+            case PlayerState.isReading:
+                if (Physics.Raycast(ray, out hit, maxInteractDistance))
+                {
+                    PlayerIsReading(hit);
+                }
+                else
+                {
+                    currentState = PlayerState.None;
+                    OnNoContext();
+                }
+                break;
+
+            case PlayerState.isHolding:
+                PlayerHoldingObject();
+                break;
+        }     
+    }
+
+    private void PlayerIsReading(RaycastHit hit)
     {
-        RaycastHit hit;
-        Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
+        ReadObject readObject = hit.collider.transform.GetComponent<ReadObject>();
+        OnRead(readObject.ReturnReadObjDescription());
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            currentState = PlayerState.None;
+        }
+    }
 
-        if (Physics.Raycast(ray, out hit, maxInteractDistance) && !isHolding)
+    private void PlayerLookAtReadable()
+    {
+        OnCanInteract();
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (hit.collider.transform.tag == "Pickup")
-            {
-                OnCanPickUp();
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    boxObj = hit.collider.transform.GetComponent<PickupObject>();
-                    boxObj.Interact();
-                    isHolding = true;
-                }
-            }    
-            else if (hit.collider.transform.tag == "Read Obj" )
-            {
-                if (!isReading)
-                {
-                    OnCanInteract();
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        isReading = true;
+            currentState = PlayerState.isReading;
+        }        
+    }
 
-                    }
-                }
-                
-                else  // Messy
-                {
-                    ReadObject readObject = hit.collider.transform.GetComponent<ReadObject>();
-                    OnRead(readObject.ReturnReadObjDescription());
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        isReading = false;
-                    }
-                }
-            }
-        }
-        else if (isHolding && boxObj)
+    private void PlayerLookAtPickup(RaycastHit hit)
+    {
+        OnCanPickUp();
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            OnCanDrop();
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                boxObj.Interact();
-                boxObj = null;
-                isHolding = false;
-            }
+            boxObj = hit.collider.transform.GetComponent<PickupObject>();
+            boxObj.Interact();
+            currentState = PlayerState.isHolding;
         }
-        else
+    }
+
+    private void PlayerHoldingObject()
+    {
+        OnCanDrop();
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            OnNoContext();
+            boxObj.Interact();
+            boxObj = null;
+            currentState = PlayerState.None;
         }
-        
     }
 }

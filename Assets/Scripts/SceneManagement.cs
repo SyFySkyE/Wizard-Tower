@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
@@ -15,7 +13,7 @@ public class SceneManagement : MonoBehaviour
             Debug.LogWarning("SceneManagement tried to load a scene with a build index greater than the number of scenes in Build Settings. Reloading scene...");
             ReloadCurrentScene();
         }
-        SceneManager.LoadScene(nextSceneIndex);        
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
     public void ReloadCurrentScene()

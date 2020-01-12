@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,9 +20,9 @@ public class PlayerMovement : MonoBehaviour
             if (!playerAudioSource.isPlaying)
             {
                 playerAudioSource.Play();
-            }            
+            }
         }
-        else 
+        else
         {
             playerAudioSource.Stop();
         }
