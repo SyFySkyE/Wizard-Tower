@@ -37,12 +37,12 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hit; // Used to store what the ray hits
         Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward); // Casts a ray from the forward center of camera
 
-        switch (currentState)
+        switch (currentState) // Depends on what state player is currently in
         {
             case PlayerState.None:
-                if (Physics.Raycast(ray, out hit, maxInteractDistance))
+                if (Physics.Raycast(ray, out hit, maxInteractDistance)) // When the casted out ray with limited distance var (maxInteractDis) hits something
                 {
-                    switch (hit.collider.transform.tag)
+                    switch (hit.collider.transform.tag) // What the ray is hitting. ie, what the player is looking at within Interact distance
                     {
                         case "Pickup":
                             PlayerLookAtPickup(hit);
@@ -51,7 +51,7 @@ public class PlayerInteract : MonoBehaviour
                             PlayerLookAtReadable();
                             break;
                         default:
-                            OnNoContext();
+                            OnNoContext(); // Event blanks out contextual hit text. Ie, clears the "Press E to Interact" canvas text
                             break;
                     }
                 }
@@ -81,21 +81,21 @@ public class PlayerInteract : MonoBehaviour
 
     private void PlayerIsReading(RaycastHit hit)
     {
-        ReadObject readObject = hit.collider.transform.GetComponent<ReadObject>();
+        ReadObject readObject = hit.collider.transform.GetComponent<ReadObject>(); // Gets component so canvas can get the description from the obj
         if (readObject) // Null check
         {
-            OnRead(readObject.ReturnReadObjDescription());
+            OnRead(readObject.ReturnReadObjDescription()); // Canvas receives this event with the str containing obj description
         }
         
         if (Input.GetKeyDown(KeyCode.E))
         {
-            currentState = PlayerState.None;
+            currentState = PlayerState.None; // Player is currently reading, presses E, Player stops reading
         }
     }
 
     private void PlayerLookAtReadable()
     {
-        OnCanInteract();
+        OnCanInteract(); // Event that GameCanvas receives and sends "Press E to Interact" to screen
         if (Input.GetKeyDown(KeyCode.E))
         {
             currentState = PlayerState.isReading;
@@ -104,7 +104,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void PlayerLookAtPickup(RaycastHit hit)
     {
-        OnCanPickUp();
+        OnCanPickUp(); // Event thta GameCanvas receives and sends "Press E to Pickup" to screen
         if (Input.GetKeyDown(KeyCode.E))
         {
             boxObj = hit.collider.transform.GetComponent<PickupObject>();
@@ -116,7 +116,7 @@ public class PlayerInteract : MonoBehaviour
     private void PlayerHoldingObject()
     {
         OnCanDrop();
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)) // Player is holding obj, presses E, drops it
         {
             boxObj.Interact();
             boxObj = null;
