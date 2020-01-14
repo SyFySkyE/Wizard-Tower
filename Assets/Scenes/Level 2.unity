@@ -16054,6 +16054,7 @@ GameObject:
   - component: {fileID: 506872524}
   - component: {fileID: 506872523}
   - component: {fileID: 506872522}
+  - component: {fileID: 506872520}
   m_Layer: 0
   m_Name: Potion
   m_TagString: Potion
@@ -16061,6 +16062,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &506872520
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506872519}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 677756716f18f2e43ba59183753dae57, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &506872522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24630,6 +24650,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Potion Break Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143607228347997467, guid: 6cb50fb593e0c434bbf9fa1c04355d39,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4303915835580627566, guid: 6cb50fb593e0c434bbf9fa1c04355d39,
         type: 3}
@@ -55409,6 +55434,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Purple Potion Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332358560781096466, guid: 4ee878461f5859e49b44e81e406323b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1332358560781096469, guid: 4ee878461f5859e49b44e81e406323b9,
         type: 3}
