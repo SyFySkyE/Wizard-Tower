@@ -123,7 +123,10 @@ public class PlayerInteract : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Potion potionToDrink = hit.collider.transform.GetComponent<Potion>();
-            potionToDrink.Drink();
+            if (potionToDrink) // Null Check
+            {
+                potionToDrink.Drink();
+            }            
         }
     }
 
