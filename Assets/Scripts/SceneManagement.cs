@@ -6,7 +6,6 @@ public class SceneManagement : MonoBehaviour
     public void LoadNextScene()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        Debug.Log("Next scene index: " + nextSceneIndex);
         if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
         {
             nextSceneIndex--;
