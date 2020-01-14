@@ -17,6 +17,7 @@ public class PlayerInteract : MonoBehaviour
     public event System.Action OnCanPickUp;
     public event System.Action OnCanDrop;
     public event System.Action OnCanInteract;
+    public event System.Action OnCanDrink;
     public event System.Action<string> OnRead;
     public event System.Action OnNoContext; // No object close enough to show contextual UI tip
 
@@ -49,6 +50,9 @@ public class PlayerInteract : MonoBehaviour
                             break;
                         case "Read Obj":
                             PlayerLookAtReadable();
+                            break;
+                        case "Potion":
+                            PlayerLookAtPotion(hit);
                             break;
                         default:
                             OnNoContext(); // Event blanks out contextual hit text. Ie, clears the "Press E to Interact" canvas text
@@ -110,6 +114,16 @@ public class PlayerInteract : MonoBehaviour
             boxObj = hit.collider.transform.GetComponent<PickupObject>();
             boxObj.Interact();
             currentState = PlayerState.isHolding;
+        }
+    }
+
+    private void PlayerLookAtPotion(RaycastHit hit)
+    {
+        OnCanDrink();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Potion potionToDrink = hit.collider.transform.GetComponent<Potion>();
+            potionToDrink.Drink();
         }
     }
 

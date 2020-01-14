@@ -8,6 +8,7 @@ TagManager:
   - Pickup
   - Read Obj
   - Harmful
+  - Potion
   layers:
   - Default
   - TransparentFX
