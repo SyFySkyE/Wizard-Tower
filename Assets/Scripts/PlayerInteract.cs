@@ -82,7 +82,11 @@ public class PlayerInteract : MonoBehaviour
     private void PlayerIsReading(RaycastHit hit)
     {
         ReadObject readObject = hit.collider.transform.GetComponent<ReadObject>();
-        OnRead(readObject.ReturnReadObjDescription());
+        if (readObject) // Null check
+        {
+            OnRead(readObject.ReturnReadObjDescription());
+        }
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
             currentState = PlayerState.None;
