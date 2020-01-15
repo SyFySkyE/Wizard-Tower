@@ -6,6 +6,8 @@ public class PickupObject : MonoBehaviour
     private Rigidbody boxRb;
     private PlayerInteract player;
 
+    public event System.Action OnForceDrop; // If player drags object through boundaries
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,14 @@ public class PickupObject : MonoBehaviour
         if (isBeingHeld)
         {
             StayInPlayerHand();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.impulse == Vector3.zero && collision.relativeVelocity == Vector3.zero) // Object is being dragged inside other objects
+        {
+            OnForceDrop();
         }
     }
 

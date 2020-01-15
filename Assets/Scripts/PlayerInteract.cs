@@ -14,6 +14,8 @@ public class PlayerInteract : MonoBehaviour
     private enum PlayerState { isHolding, isReading, None }
     private PlayerState currentState = PlayerState.None;
 
+    bool objForceDrop = false; // TODO tech debt
+
     public event System.Action OnCanPickUp;
     public event System.Action OnCanDrop;
     public event System.Action OnCanInteract;
@@ -109,12 +111,19 @@ public class PlayerInteract : MonoBehaviour
     private void PlayerLookAtPickup(RaycastHit hit)
     {
         OnCanPickUp(); // Event thta GameCanvas receives and sends "Press E to Pickup" to screen
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
             boxObj = hit.collider.transform.GetComponent<PickupObject>();
             boxObj.Interact();
             currentState = PlayerState.isHolding;
+            boxObj.OnForceDrop += BoxObj_OnForceDrop;
         }
+    }
+
+    private void BoxObj_OnForceDrop()
+    {
+        objForceDrop = true;
     }
 
     private void PlayerLookAtPotion(RaycastHit hit)
@@ -133,11 +142,12 @@ public class PlayerInteract : MonoBehaviour
     private void PlayerHoldingObject()
     {
         OnCanDrop();
-        if (Input.GetKeyDown(KeyCode.E)) // Player is holding obj, presses E, drops it
+        if (Input.GetKeyDown(KeyCode.E) || objForceDrop) // Player is holding obj, presses E, drops it. Or if obj is dragged through colliders
         {
             boxObj.Interact();
             boxObj = null;
             currentState = PlayerState.None;
+            objForceDrop = false;
         }
     }
 }
