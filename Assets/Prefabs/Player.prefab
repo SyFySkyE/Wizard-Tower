@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 793790875}
   - component: {fileID: 793790874}
   m_Layer: 0
-  m_Name: Arm
+  m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9445,7 +9445,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1 &1966147676
