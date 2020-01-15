@@ -10,18 +10,12 @@ public class PlayerShoot : MonoBehaviour
     [Header("Where the player shoots it")]
     [SerializeField] private Transform gunLocation;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(bullet, gunLocation.position, bullet.transform.rotation);
+            Instantiate(bullet, gunLocation.position, gunLocation.rotation);
         }
     }
 }

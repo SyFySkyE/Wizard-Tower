@@ -10,6 +10,7 @@ TagManager:
   - Harmful
   - Potion
   - Drank
+  - Bullet
   layers:
   - Default
   - TransparentFX
