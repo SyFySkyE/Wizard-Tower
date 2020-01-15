@@ -9,6 +9,7 @@ TagManager:
   - Read Obj
   - Harmful
   - Potion
+  - Drank
   layers:
   - Default
   - TransparentFX

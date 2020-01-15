@@ -15,6 +15,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayWalkSfx();
+    }
+
+    private void PlayWalkSfx()
+    {
         if (playerRb.velocity != Vector3.zero)
         {
             if (!playerAudioSource.isPlaying)

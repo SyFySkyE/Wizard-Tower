@@ -35,7 +35,14 @@ public class Potion : MonoBehaviour
             breakParticles.Play();
             player.DrinkPotion(this);
             potionAnimator.SetTrigger("Drink");
+            this.tag = "Drank";
             isDrank = true;
         }        
+    }
+
+    public void CanDrink()
+    {
+        isDrank = false;
+        this.tag = "Potion";
     }
 }
