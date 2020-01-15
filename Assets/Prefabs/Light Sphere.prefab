@@ -4953,7 +4953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  onLightDestroySfx: {fileID: 8300000, guid: 4fe7b78a42bdac840b98f901db04a4d0, type: 3}
+  onLightDestroySfx: {fileID: 8300000, guid: 1d4224d2857a66d47a01abd5b98a2029, type: 3}
   onLightDestroySfxVolume: 1
 --- !u!54 &8405474059323839976
 Rigidbody:
