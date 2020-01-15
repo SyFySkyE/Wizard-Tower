@@ -5,12 +5,6 @@ public class DoorPuzzle : MonoBehaviour
     [Header("The puzzle triggers needed to complete this puzzle")]
     [SerializeField] private PuzzleTrigger[] puzzleConditions;
 
-    [Header("Puzzle Progress SFX")]
-    [SerializeField] private AudioClip puzzleProgressSfx;
-    [SerializeField] private float puzzleProgressSfxVolume = 1f;
-    [SerializeField] private AudioClip puzzleCompleteSfx;
-    [SerializeField] private float puzzleCompleteSfxVolume = 1f;
-
     private Animator doorAnimator;
     private AudioSource dooraudiosource;
     private int numberOfConditionsMet = 0;

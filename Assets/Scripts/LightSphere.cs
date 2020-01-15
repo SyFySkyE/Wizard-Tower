@@ -10,10 +10,19 @@ public class LightSphere : MonoBehaviour
     private float secondsBeforeDestroy = 10f; // This is a failsafe in case nothing destroys it.
 
     private Rigidbody bulletRb;
+    private Vector3 endPoint;
 
     private void Start()
     {
         bulletRb = GetComponent<Rigidbody>();
+        Ray cameraRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+        RaycastHit hitInfo;
+        if (Physics.Raycast(cameraRay, out hitInfo, Mathf.Infinity))
+        {
+            transform.position = Vector3.MoveTowards(transform.position, hitInfo.point, speed * Time.deltaTime);
+        }
+
+        endPoint = hitInfo.point;
         Destroy(this.gameObject, secondsBeforeDestroy);
     }
 
@@ -25,12 +34,11 @@ public class LightSphere : MonoBehaviour
 
     private void Update()
     {
-        Ray cameraRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-        RaycastHit hitInfo;
-
-        Physics.Raycast(cameraRay, out hitInfo, Mathf.Infinity);
-        transform.position = Vector3.MoveTowards(transform.position, hitInfo.point, speed * Time.deltaTime);
-    }
+        if (endPoint != Vector3.zero)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, endPoint, speed * Time.deltaTime);
+        }        
+    }    
 
     private void OnCollisionEnter(Collision collision)
     {
