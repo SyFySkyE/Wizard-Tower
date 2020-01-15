@@ -32,6 +32,16 @@ public class PickupObject : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        // TODO Don't do it like this, but use this as a base for writing depenetration systems
+
+        //BoxCollider thisCollider = GetComponent<BoxCollider>();
+        //Vector3 outV3Info;
+        //float moreOutInfo;
+        //Physics.ComputePenetration(thisCollider, transform.position, transform.rotation, collision.collider, collision.gameObject.transform.position, collision.gameObject.transform.rotation, out outV3Info, out moreOutInfo);
+    }
+
     private void Drop()
     {
         boxRb.velocity = Vector3.zero;
