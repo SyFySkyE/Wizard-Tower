@@ -7,13 +7,19 @@ public class LightSphere : MonoBehaviour
     [Header("How fast Light Sphere travels")]
     [SerializeField] private float speed = 5f;
 
-    private float secondsBeforeDestroy = 10f; // This is a failsafe in case nothing destroys it.
+    [Header("Sfx that plays when light gets destroyed")]
+    [SerializeField] private AudioClip onLightDestroySfx;
+    [SerializeField] private float onLightDestroySfxVolume = 0.5f;
 
-    private Rigidbody bulletRb;
+    private float secondsBeforeDestroy = 6f; // This is a failsafe in case nothing destroys it.
+
+    private Rigidbody bulletRb; // TODO Remove
+    private Animator lightSphereAnim;
     private Vector3 endPoint;
 
     private void Start()
     {
+        lightSphereAnim = GetComponent<Animator>();
         bulletRb = GetComponent<Rigidbody>();
         Ray cameraRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         RaycastHit hitInfo;
@@ -42,6 +48,16 @@ public class LightSphere : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        lightSphereAnim.SetTrigger("Death");
+    }
+
+    public void Death()
+    {
         Destroy(this.gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        AudioSource.PlayClipAtPoint(onLightDestroySfx, transform.position, onLightDestroySfxVolume);
     }
 }
