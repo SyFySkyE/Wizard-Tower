@@ -28,7 +28,7 @@ public class PickupObject : MonoBehaviour
     {
         if (collision.impulse == Vector3.zero && collision.relativeVelocity == Vector3.zero) // Object is being dragged inside other objects
         {
-            OnForceDrop();
+            OnForceDrop?.Invoke();
         }
     }
 

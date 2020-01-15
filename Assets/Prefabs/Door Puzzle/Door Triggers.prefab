@@ -15271,6 +15271,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.39279
       objectReference: {fileID: 0}
+    - target: {fileID: 1200528352918915538, guid: bb0822482c16af742a868294417db372,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200528353379941462, guid: bb0822482c16af742a868294417db372,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200528352768398339, guid: bb0822482c16af742a868294417db372,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb0822482c16af742a868294417db372, type: 3}
 --- !u!4 &1200528353836304815 stripped
@@ -15384,6 +15399,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: ab28d112e2b0e5e4fbbde431bb7d7969, type: 3}
+    - target: {fileID: 8081677614118887791, guid: 3dfcfa5bdba562c4f93df9e21b111ef0,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.682
+      objectReference: {fileID: 0}
     - target: {fileID: 8081677614118887791, guid: 3dfcfa5bdba562c4f93df9e21b111ef0,
         type: 3}
       propertyPath: m_Pitch
