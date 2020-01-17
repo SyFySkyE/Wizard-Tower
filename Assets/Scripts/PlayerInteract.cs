@@ -21,6 +21,7 @@ public class PlayerInteract : MonoBehaviour
     public event System.Action OnCanInteract;
     public event System.Action OnCanDrink;
     public event System.Action<string> OnRead;
+    public event System.Action OnDrink;
     public event System.Action OnNoContext; // No object close enough to show contextual UI tip
 
     // Start is called before the first frame update
@@ -135,6 +136,7 @@ public class PlayerInteract : MonoBehaviour
             if (potionToDrink) // Null Check
             {
                 potionToDrink.Drink();
+                OnDrink();
             }            
         }
     }

@@ -8,14 +8,15 @@ public class PlayerPotionEffects : MonoBehaviour
     [SerializeField] private float hasteSpeedMultiplier = 1.5f;
     private float normalSpeed;
 
-    [Header("Time length of potion effects, in seconds.")]
+    [Header("Time length of potion effects, in seconds. See tooltip if changing!")]
+    [Tooltip("If this value gets changed, then the canvas potion drink screen effect will also need to be set to this new value. Ask Chris if you need help.")]
     [SerializeField] private float potionLength = 5f;
 
     private UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController playerMove;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {        
         playerMove = GetComponent<UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController>();
         normalSpeed = playerMove.movementSettings.ForwardSpeed;
     }

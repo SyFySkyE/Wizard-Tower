@@ -12,6 +12,7 @@ public class GameCanvas : MonoBehaviour
     [SerializeField] private string drinkText = "Press E to Drink";
 
     private PlayerInteract player;
+    private Animator canvasAnim;
 
     private void OnEnable()
     {
@@ -22,6 +23,12 @@ public class GameCanvas : MonoBehaviour
         player.OnCanInteract += Player_OnCanInteract;
         player.OnRead += Player_OnRead;
         player.OnCanDrink += Player_OnCanDrink;
+        player.OnDrink += Player_OnDrink;
+    }    
+
+    private void Player_OnDrink()
+    {
+        canvasAnim.SetTrigger("Drink");
     }
 
     private void Player_OnCanDrink()
@@ -57,12 +64,6 @@ public class GameCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        canvasAnim = GetComponent<Animator>();
     }
 }
