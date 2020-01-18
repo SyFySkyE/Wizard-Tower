@@ -33,7 +33,7 @@ public class PlayerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        CastRay();
+        CastRay();        
     }
 
     private void CastRay()
@@ -61,6 +61,7 @@ public class PlayerInteract : MonoBehaviour
                             OnNoContext(); // Event blanks out contextual hit text. Ie, clears the "Press E to Interact" canvas text
                             break;
                     }
+                    Debug.Log(hit.collider.gameObject);
                 }
                 else
                 {

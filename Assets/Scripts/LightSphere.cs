@@ -23,7 +23,14 @@ public class LightSphere : MonoBehaviour
         RaycastHit hitInfo = CastRay();
 
         endPoint = hitInfo.point; // The light ball travels to whever the ray hits
-        Destroy(this.gameObject, secondsBeforeDestroy); // In case something awful happens and the light ball never hits anything so there wouldn't be any lingering game objects.
+
+        StartCoroutine(DestroySelfAfterTimer()); // In case something awful happens and the light ball never hits anything so there wouldn't be any lingering game objects.
+    }
+
+    private IEnumerator DestroySelfAfterTimer()
+    {
+        yield return new WaitForSeconds(secondsBeforeDestroy);
+        lightSphereAnim.SetTrigger("Death");
     }
 
     private RaycastHit CastRay()
