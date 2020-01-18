@@ -1,23 +1,43 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DoorPuzzle : MonoBehaviour
 {
-    [Header("The puzzle triggers needed to complete this puzzle")]
-    [SerializeField] private PuzzleTrigger[] puzzleConditions;
+    [Header("The \"correct obj\" puzzle triggers required for this puzzle")]
+    [SerializeField] private PuzzleTrigger[] correctObjConditions;
 
-    private Animator doorAnimator;
+    [Header("The \"target\" puzzle triggers require for this puzzle")]
+    [SerializeField] private TargetTrigger[] targetConditions;
+
     private AudioSource dooraudiosource;
+    private Animator doorAnim;
+
+    private int numberOfConditions = 0;
     private int numberOfConditionsMet = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        doorAnim = GetComponent<Animator>();
+        numberOfConditions = correctObjConditions.Length + targetConditions.Length;
         dooraudiosource = GetComponent<AudioSource>();
-        doorAnimator = GetComponent<Animator>();
-        foreach (PuzzleTrigger puzzle in puzzleConditions)
+        foreach (PuzzleTrigger puzzle in correctObjConditions)
         {
             puzzle.OnPuzzleComplete += Puzzle_OnPuzzleComplete;
             puzzle.OnObjRemove += Puzzle_OnObjRemove;
+        }
+        foreach (TargetTrigger trigger in targetConditions)
+        {
+            trigger.OnPuzzleComplete += Trigger_OnPuzzleComplete;
+        }
+    }
+
+    private void Trigger_OnPuzzleComplete()
+    {
+        numberOfConditionsMet++;
+        if (numberOfConditionsMet == numberOfConditions)
+        {
+            SolvePuzzle();
         }
     }
 
@@ -29,7 +49,7 @@ public class DoorPuzzle : MonoBehaviour
     private void Puzzle_OnPuzzleComplete()
     {
         numberOfConditionsMet++;
-        if (numberOfConditionsMet == puzzleConditions.Length)
+        if (numberOfConditionsMet == numberOfConditions)
         {
             SolvePuzzle();
         }
@@ -37,7 +57,7 @@ public class DoorPuzzle : MonoBehaviour
 
     private void SolvePuzzle()
     {
-        doorAnimator.SetTrigger("Open");
+        doorAnim.SetTrigger("Open");
         dooraudiosource.Play();
     }
 }

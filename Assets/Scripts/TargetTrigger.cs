@@ -19,6 +19,7 @@ public class TargetTrigger : MonoBehaviour
     {
         puzzleCompleteVfx = GetComponentInChildren<ParticleSystem>();
         puzzleAudioSource = GetComponent<AudioSource>();
+        this.tag = "Target";
     }
 
     private void OnCollisionEnter(Collision collision)
