@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2137308203008744407}
   - component: {fileID: 2137308203008744405}
   - component: {fileID: 2137308203008744404}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Emission
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4763,7 +4763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2137308203711132342}
   - component: {fileID: 2137308203711132343}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4860,7 +4860,7 @@ GameObject:
   - component: {fileID: 8405474059323839976}
   - component: {fileID: 7985498056926572367}
   - component: {fileID: -3897168183803391096}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Light Sphere
   m_TagString: Bullet
   m_Icon: {fileID: 0}

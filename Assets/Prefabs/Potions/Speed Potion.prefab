@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1100283622}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1168140170}
   - component: {fileID: 1168140175}
   - component: {fileID: 1168140176}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Speed Potion
   m_TagString: Potion
   m_Icon: {fileID: 0}
@@ -187,6 +187,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion Break Particles
       objectReference: {fileID: 0}
+    - target: {fileID: 4143607228347997467, guid: 6cb50fb593e0c434bbf9fa1c04355d39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4303915835580627566, guid: 6cb50fb593e0c434bbf9fa1c04355d39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -266,6 +271,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Green Potion Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819385755249183745, guid: c61b2f8870f75e641a15ecd29c934e1d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8819385755249183745, guid: c61b2f8870f75e641a15ecd29c934e1d,
         type: 3}
