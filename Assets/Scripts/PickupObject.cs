@@ -11,8 +11,15 @@ public class PickupObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boxRb = GetComponent<Rigidbody>();
+        if (!GetComponent<Rigidbody>())
+        {
+            this.gameObject.AddComponent<Rigidbody>();
+        }
+        boxRb = GetComponent<Rigidbody>(); // Lazy load
+        
         player = FindObjectOfType<PlayerInteract>();
+        this.tag = "Pickup";
+        this.gameObject.layer = 9; // Pick
     }
 
     // Update is called once per frame
