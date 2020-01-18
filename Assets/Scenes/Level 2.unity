@@ -62829,6 +62829,31 @@ Transform:
   m_Father: {fileID: 1345846921}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1922237559 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7981602763942191206, guid: 45b43af16b76be343800fcfc71e8b71d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7981602762365723230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1922237560
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922237559}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8f3358a32e35cd498ce533a1056d8f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1927929428
 GameObject:
   m_ObjectHideFlags: 0
@@ -65685,6 +65710,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630105741, guid: 45b43af16b76be343800fcfc71e8b71d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -35.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630105741, guid: 45b43af16b76be343800fcfc71e8b71d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -32.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630105741, guid: 45b43af16b76be343800fcfc71e8b71d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10.465956
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630105741, guid: 45b43af16b76be343800fcfc71e8b71d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10.465956
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630105741, guid: 45b43af16b76be343800fcfc71e8b71d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10.465956
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b43af16b76be343800fcfc71e8b71d, type: 3}
