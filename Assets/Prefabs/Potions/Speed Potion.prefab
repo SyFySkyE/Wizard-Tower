@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1168140170}
   - component: {fileID: 1168140175}
   - component: {fileID: 1168140176}
+  - component: {fileID: -1067980202963391977}
   m_Layer: 14
   m_Name: Speed Potion
   m_TagString: Potion
@@ -175,6 +176,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 66.71107, y: 106.03717, z: 66.71109}
   m_Center: {x: 0.0000038146973, y: 17.967932, z: -0.000005722046}
+--- !u!114 &-1067980202963391977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2948271382142708337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8552b467c5f0124a861594c4d0e12c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &307984583
 PrefabInstance:
   m_ObjectHideFlags: 0

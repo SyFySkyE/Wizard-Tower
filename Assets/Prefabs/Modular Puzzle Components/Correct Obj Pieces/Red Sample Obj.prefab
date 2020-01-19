@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 3052337209296819688}
   - component: {fileID: 3052337209296819684}
   - component: {fileID: 3052337209296819683}
+  - component: {fileID: -7718433895424894653}
   m_Layer: 0
-  m_Name: Red Box
+  m_Name: Red Sample Obj
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,3 +122,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-7718433895424894653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3052337209296819689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8552b467c5f0124a861594c4d0e12c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
