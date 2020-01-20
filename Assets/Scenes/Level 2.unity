@@ -16867,11 +16867,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: bookcase2
       objectReference: {fileID: 0}
-    - target: {fileID: -4861924686910468554, guid: dbe7b7a719dd8b247990df91052caa04,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a6303fc5802b54a43932ceb88e047cbe, type: 2}
     - target: {fileID: -4216859302048453862, guid: dbe7b7a719dd8b247990df91052caa04,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16942,6 +16937,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01092958
       objectReference: {fileID: 0}
+    - target: {fileID: -4861924686910468554, guid: dbe7b7a719dd8b247990df91052caa04,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6303fc5802b54a43932ceb88e047cbe, type: 2}
     - target: {fileID: -157825318150610632, guid: dbe7b7a719dd8b247990df91052caa04,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -30662,11 +30662,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa2
       objectReference: {fileID: 0}
-    - target: {fileID: -7473593077955138424, guid: 3287c4e6a080d5e45aa765d9ef1fef0c,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 478fc2dea27bf445493d4ce412f4c3eb, type: 2}
     - target: {fileID: -4216859302048453862, guid: 3287c4e6a080d5e45aa765d9ef1fef0c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30737,6 +30732,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3.3760974
       objectReference: {fileID: 0}
+    - target: {fileID: -7473593077955138424, guid: 3287c4e6a080d5e45aa765d9ef1fef0c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 478fc2dea27bf445493d4ce412f4c3eb, type: 2}
     - target: {fileID: -2942645444021431959, guid: 3287c4e6a080d5e45aa765d9ef1fef0c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -49770,7 +49770,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6022
+  m_Name: pb_Mesh-232930
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -57822,11 +57822,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: bookcase2 (1)
       objectReference: {fileID: 0}
-    - target: {fileID: -4861924686910468554, guid: dbe7b7a719dd8b247990df91052caa04,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a6303fc5802b54a43932ceb88e047cbe, type: 2}
     - target: {fileID: -4216859302048453862, guid: dbe7b7a719dd8b247990df91052caa04,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -57897,6 +57892,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01092958
       objectReference: {fileID: 0}
+    - target: {fileID: -4861924686910468554, guid: dbe7b7a719dd8b247990df91052caa04,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6303fc5802b54a43932ceb88e047cbe, type: 2}
     - target: {fileID: -157825318150610632, guid: dbe7b7a719dd8b247990df91052caa04,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

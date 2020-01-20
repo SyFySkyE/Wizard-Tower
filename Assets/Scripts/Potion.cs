@@ -8,13 +8,12 @@ public class Potion : MonoBehaviour
 
     [Header("What effect it will give the player if they drink this potion")]
     [SerializeField] private PotionType potionType; // Defaults to None    
-    public PotionType ThisPotionType { get { return this.potionType; } }
+    public PotionType ThisPotionType { get { return this.potionType; } }    
 
     private ParticleSystem breakParticles; 
-    private Vector3 spawnPos; // Where the potion will respawn after getting broken
-    private MeshRenderer potionRender;
     private PlayerPotionEffects player;
     private Animator potionAnimator;
+    private AudioSource drinkSfx;
 
     private bool isDrank = false;
 
@@ -22,9 +21,8 @@ public class Potion : MonoBehaviour
     void Start()
     {
         potionAnimator = GetComponent<Animator>();
+        drinkSfx = GetComponent<AudioSource>();
         player = FindObjectOfType<PlayerPotionEffects>();
-        potionRender = GetComponent<MeshRenderer>();
-        spawnPos = transform.position;
         breakParticles = GetComponentInChildren<ParticleSystem>();
     }
 
@@ -37,6 +35,7 @@ public class Potion : MonoBehaviour
             potionAnimator.SetTrigger("Drink");
             this.tag = "Drank";
             isDrank = true;
+            drinkSfx.Play();
         }        
     }
 

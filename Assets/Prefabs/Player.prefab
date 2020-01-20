@@ -9830,6 +9830,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasteSpeedMultiplier: 2
   potionLength: 5
+  speedUpSfx: {fileID: 8300000, guid: 3643387f977a5084ebad95fbd86125e9, type: 3}
+  speedUpSfxVolume: 0.5
+  speedDownSfx: {fileID: 8300000, guid: 220a5cd9e3eeb554892b9c844614dea2, type: 3}
+  speedDownSfxVolume: 0.5
 --- !u!114 &3305712939959755157
 MonoBehaviour:
   m_ObjectHideFlags: 0
