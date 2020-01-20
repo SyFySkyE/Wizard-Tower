@@ -82,6 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0094e44b53a2801418095375f3311605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  breakSfx: {fileID: 8300000, guid: 0ecf9adaf06f02f48a50ce1b139db7e5, type: 3}
+  breakSfxVolume: 0.5
 --- !u!82 &2022174931
 AudioSource:
   m_ObjectHideFlags: 0
@@ -92,11 +94,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0ecf9adaf06f02f48a50ce1b139db7e5, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 6348e96f79bccc84484973f52d3e3e2c, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
