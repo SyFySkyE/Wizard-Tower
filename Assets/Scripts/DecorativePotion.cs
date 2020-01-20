@@ -6,9 +6,11 @@ public class DecorativePotion : MonoBehaviour
 {
     private ParticleSystem breakParticles;
     private Animator potionAnim;
+    private AudioSource potionAudioSource;
 
     private void Start()
     {
+        potionAudioSource = GetComponent<AudioSource>();
         potionAnim = GetComponent<Animator>();
         breakParticles = GetComponentInChildren<ParticleSystem>();
     }
@@ -17,6 +19,7 @@ public class DecorativePotion : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            potionAudioSource.Play();
             potionAnim.SetTrigger("Break");
             breakParticles.Play();
             Destroy(this.gameObject, breakParticles.main.duration);

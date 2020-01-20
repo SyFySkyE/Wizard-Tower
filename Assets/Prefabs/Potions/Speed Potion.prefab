@@ -147,6 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   potionType: 1
+  speedUpSfx: {fileID: 8300000, guid: 3643387f977a5084ebad95fbd86125e9, type: 3}
+  speedUpSfxVolume: 0.5
+  speedDownSfx: {fileID: 8300000, guid: 220a5cd9e3eeb554892b9c844614dea2, type: 3}
+  speedDownSfxVolume: 0.5
 --- !u!54 &1168140175
 Rigidbody:
   m_ObjectHideFlags: 0

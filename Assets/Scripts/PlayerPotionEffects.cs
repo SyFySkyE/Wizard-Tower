@@ -13,18 +13,13 @@ public class PlayerPotionEffects : MonoBehaviour
     [SerializeField] private float potionLength = 5f;
 
     [Header("Sound Effects when drinking Potion")]
-    [SerializeField] private AudioClip speedUpSfx;
-    [SerializeField] private float speedUpSfxVolume = 0.5f;
-    [SerializeField] private AudioClip speedDownSfx;
-    [SerializeField] private float speedDownSfxVolume = 0.5f;
-
-    private AudioSource playerAudio;
+    [SerializeField] private AudioClip gulpSfx;
+    [SerializeField] private float gulpSfxVolume = 0.5f;
     private UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController playerMove;
 
     // Start is called before the first frame update
     void Start()
-    {
-        playerAudio = GetComponent<AudioSource>();
+    { 
         playerMove = GetComponent<UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController>();
         normalSpeed = playerMove.movementSettings.ForwardSpeed;
     }
@@ -66,13 +61,12 @@ public class PlayerPotionEffects : MonoBehaviour
 
     private void PlayerUsedHaste()
     {
-        playerAudio.PlayOneShot(speedUpSfx, speedUpSfxVolume);
+        AudioSource.PlayClipAtPoint(gulpSfx, transform.position, gulpSfxVolume);
         playerMove.movementSettings.ForwardSpeed *= hasteSpeedMultiplier;
     }
 
     private void ResetPlayerStats() // Reset player back to normal
     {
-        playerAudio.PlayOneShot(speedDownSfx, speedDownSfxVolume);
         playerMove.movementSettings.ForwardSpeed = normalSpeed;
     }
 }

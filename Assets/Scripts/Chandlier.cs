@@ -5,11 +5,13 @@ using UnityEngine;
 public class Chandlier : MonoBehaviour
 {
     private ParticleSystem[] candles;
+    private AudioSource candleAudioSource;
     private bool isLit = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        candleAudioSource = GetComponent<AudioSource>();
         candles = GetComponentsInChildren<ParticleSystem>();
     }
 
@@ -17,8 +19,9 @@ public class Chandlier : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet") && !isLit)
         {
+            candleAudioSource.Play();
             foreach (ParticleSystem ps in candles)
-            {
+            {                
                 ps.Play();
                 isLit = true;
             }
