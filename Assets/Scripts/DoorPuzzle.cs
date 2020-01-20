@@ -9,6 +9,10 @@ public class DoorPuzzle : MonoBehaviour // TODO Tech debt is pretty high in this
     [Header("The \"target\" puzzle triggers require for this puzzle")]
     [SerializeField] private TargetTrigger[] targetConditions;
 
+    [Header("How many sec's before door closes. Leave this at 0 if not a Time puzzle.")]
+    [Tooltip("How many seconds between the puzzle being solved and the door opening, and the door closing. This is meant for Time puzzles, where when the puzzle is solved, the player has a limited time before the door closes and the puzzle reset. Leave this at 0 if you do not want this to be a time puzzle.")]
+    [SerializeField] private float secondsBeforePuzzleReset = 0f;
+
     private AudioSource dooraudiosource;
     private Animator doorAnim;
     private UnityEngine.UI.Slider progressSlider;
@@ -16,6 +20,9 @@ public class DoorPuzzle : MonoBehaviour // TODO Tech debt is pretty high in this
     private int numberOfConditions = 0;
     private int numberOfConditionsMet = 0;
     private bool isSolved = false;
+    private bool isTimePuzzleSolved = false;
+
+    public event System.Action OnPuzzleReset;
 
     // Start is called before the first frame update
     void Start()
@@ -80,5 +87,41 @@ public class DoorPuzzle : MonoBehaviour // TODO Tech debt is pretty high in this
         doorAnim.SetTrigger("Open");
         isSolved = true;
         dooraudiosource.Play();
+        if (secondsBeforePuzzleReset != 0)
+        {
+            StartCoroutine(CloseDoor());
+        }
+    }
+
+    private IEnumerator CloseDoor()
+    {
+        progressSlider.maxValue = secondsBeforePuzzleReset;
+        for (float i = secondsBeforePuzzleReset; i > 0; i--)
+        {
+            progressSlider.value = i;
+            yield return new WaitForSeconds(1);
+        }                
+        ResetPuzzle();        
+    }
+
+    private void ResetPuzzle()
+    {
+        if (!isTimePuzzleSolved)
+        {
+            foreach (TargetTrigger trigger in targetConditions)
+            {
+                trigger.ResetPuzzle();
+            }
+
+            foreach (PuzzleTrigger puzzle in correctObjConditions)
+            {
+                puzzle.ResetPuzzle();
+            }
+            numberOfConditionsMet = correctObjConditions.Length;
+            progressSlider.maxValue = numberOfConditions;
+            progressSlider.value = numberOfConditionsMet;
+            doorAnim.SetTrigger("Close");
+            isSolved = false;
+        }        
     }
 }

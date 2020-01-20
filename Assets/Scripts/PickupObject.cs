@@ -5,12 +5,14 @@ public class PickupObject : MonoBehaviour
     private bool isBeingHeld = false;
     private Rigidbody boxRb;
     private PlayerInteract player;
+    private Vector3 startPos;
 
     public event System.Action OnForceDrop; // If player drags object through boundaries
 
     // Start is called before the first frame update
     void Start()
     {
+        startPos = transform.position;
         if (!GetComponent<Rigidbody>())
         {
             this.gameObject.AddComponent<Rigidbody>();
@@ -79,5 +81,10 @@ public class PickupObject : MonoBehaviour
     public void Pickup()
     {
         isBeingHeld = true;
+    }
+
+    public void ResetPostion()
+    {
+        transform.position = startPos;
     }
 }

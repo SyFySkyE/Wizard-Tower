@@ -32,4 +32,9 @@ public class TargetTrigger : MonoBehaviour
             hasCompleted = true;
         }
     }
+
+    public void ResetPuzzle()
+    {
+        hasCompleted = false;
+    }
 }

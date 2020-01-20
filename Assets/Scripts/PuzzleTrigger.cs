@@ -42,4 +42,9 @@ public class PuzzleTrigger : MonoBehaviour
             OnObjRemove();
         }
     }
+
+    public void ResetPuzzle()
+    {
+        correctObjTrigger.GetComponent<PickupObject>().ResetPostion();
+    }
 }

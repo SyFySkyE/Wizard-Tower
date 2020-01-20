@@ -12,6 +12,8 @@ TagManager:
   - Drank
   - Bullet
   - Target
+  - Progress Slider
+  - Time Slider
   layers:
   - Default
   - TransparentFX
