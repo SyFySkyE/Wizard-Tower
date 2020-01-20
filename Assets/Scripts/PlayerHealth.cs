@@ -10,7 +10,21 @@ public class PlayerHealth : MonoBehaviour
     [Header("How many seconds before player becomes vulnerable after getting hurt")]
     [SerializeField] private float secondsBeforeVulnerableAgain = 3f;
 
+    [Header("How many seconds before scene reloads after player death")]
+    [SerializeField] private float secondsBeforeSceneReload = 3f;
+     
     private bool isVulnerable = true;
+    private Animator playerAnim;
+    private bool isDead = false;
+
+    public event System.Action OnHurt;
+    public event System.Action OnCameraDeath;
+    public event System.Action OnDeath;
+
+    private void Start()
+    {
+        playerAnim = GetComponent<Animator>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -37,12 +51,14 @@ public class PlayerHealth : MonoBehaviour
     private void HurtPlayer()
     {
         healthPoints--;
-        if (healthPoints <= 0)
+        if (healthPoints <= 0 && !isDead)
         {
             PlayerDeath();
         }
         else
         {
+            OnHurt();
+            playerAnim.SetTrigger("Hurt");
             StartCoroutine(InvulnerabilityTimer());
         }        
     }
@@ -56,6 +72,15 @@ public class PlayerHealth : MonoBehaviour
 
     private void PlayerDeath()
     {
-        Debug.Log("Player HP is 0");
+        playerAnim.SetTrigger("Death");
+        isDead = true;
+        OnCameraDeath();
+        StartCoroutine(CallDeathEvent());        
+    }
+
+    private IEnumerator CallDeathEvent()
+    {
+        yield return new WaitForSeconds(secondsBeforeSceneReload);
+        OnDeath();
     }
 }

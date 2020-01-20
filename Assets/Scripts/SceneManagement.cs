@@ -3,6 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
+    private PlayerHealth player;
+
+    private void Start()
+    {
+        player = FindObjectOfType<PlayerHealth>();
+        if (player)
+        {
+            player.OnDeath += Player_OnDeath;
+        }        
+    }
+
+    private void Player_OnDeath()
+    {
+        ReloadCurrentScene();
+    }
+
     public void LoadNextScene()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;

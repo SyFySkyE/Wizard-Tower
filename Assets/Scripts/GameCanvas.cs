@@ -12,11 +12,15 @@ public class GameCanvas : MonoBehaviour
     [SerializeField] private string drinkText = "Press E to Drink";
 
     private PlayerInteract player;
+    private PlayerHealth playerHeath;
     private Animator canvasAnim;
 
     private void OnEnable()
     {
         player = FindObjectOfType<PlayerInteract>();
+        playerHeath = FindObjectOfType<PlayerHealth>();
+        playerHeath.OnHurt += PlayerHeath_OnHurt;
+        playerHeath.OnCameraDeath += PlayerHeath_OnCameraDeath;
         player.OnCanPickUp += Player_canPickUp;
         player.OnCanDrop += Player_OnCanDrop;
         player.OnNoContext += Player_OnNoContext;
@@ -24,7 +28,17 @@ public class GameCanvas : MonoBehaviour
         player.OnRead += Player_OnRead;
         player.OnCanDrink += Player_OnCanDrink;
         player.OnDrink += Player_OnDrink;
-    }    
+    }
+
+    private void PlayerHeath_OnCameraDeath()
+    {
+        canvasAnim.SetTrigger("Death");
+    }
+
+    private void PlayerHeath_OnHurt()
+    {
+        canvasAnim.SetTrigger("Hurt");
+    }
 
     private void Player_OnDrink()
     {
