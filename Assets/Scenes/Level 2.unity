@@ -46398,7 +46398,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31768
+  m_Name: pb_Mesh200144
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -56303,5 +56303,9 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1838451958}
+    - target: {fileID: 1622941775, guid: a2e718dbf0391af45aad2d9c70736908, type: 3}
+      propertyPath: potionLength
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e718dbf0391af45aad2d9c70736908, type: 3}
