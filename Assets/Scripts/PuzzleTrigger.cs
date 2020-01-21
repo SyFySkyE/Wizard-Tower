@@ -9,6 +9,10 @@ public class PuzzleTrigger : MonoBehaviour
     [SerializeField] private AudioClip puzzleCompleteSfx;
     [SerializeField] private float puzzleCompleteSfxVolume = 0.5f;
 
+    [Header("SFX that plays when put in wrong place")]
+    [SerializeField] private AudioClip puzzleDenySfx;
+    [SerializeField] private float puzzleDenySfxVolume = 0.5f;
+
     private AudioSource puzzleAudioSource;
     private ParticleSystem puzzleCompleteVfx;
 
@@ -32,6 +36,10 @@ public class PuzzleTrigger : MonoBehaviour
             puzzleAudioSource.PlayOneShot(puzzleCompleteSfx, puzzleCompleteSfxVolume);
             puzzleCompleteVfx.Play();
             OnPuzzleComplete();
+        }
+        else
+        {
+            puzzleAudioSource.PlayOneShot(puzzleDenySfx, puzzleDenySfxVolume);
         }
     }
 

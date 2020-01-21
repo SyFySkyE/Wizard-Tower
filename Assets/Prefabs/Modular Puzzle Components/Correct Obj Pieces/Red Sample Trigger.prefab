@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3229430906833283850}
   - component: {fileID: 3229430906833283853}
   - component: {fileID: 3596867889789037016}
-  m_Layer: 0
-  m_Name: Red Trigger
+  m_Layer: 15
+  m_Name: Red Sample Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,6 +110,8 @@ MonoBehaviour:
   correctObjTrigger: {fileID: 0}
   puzzleCompleteSfx: {fileID: 8300000, guid: 6e0d8fb2424864743a0ab385d1cf733c, type: 3}
   puzzleCompleteSfxVolume: 0.5
+  puzzleDenySfx: {fileID: 8300000, guid: 8ff15f69a7a513d458e546331a7a3d79, type: 3}
+  puzzleDenySfxVolume: 0.5
 --- !u!82 &3596867889789037016
 AudioSource:
   m_ObjectHideFlags: 0
@@ -217,7 +219,7 @@ GameObject:
   - component: {fileID: 3596867888047631442}
   - component: {fileID: 3596867888047631440}
   - component: {fileID: 3596867888047631441}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Complete Vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}

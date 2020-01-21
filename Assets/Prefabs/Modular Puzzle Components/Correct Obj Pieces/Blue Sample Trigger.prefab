@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 893778744193962825}
   - component: {fileID: 893778744193962827}
   - component: {fileID: 893778744193962826}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Complete Vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4824,8 +4824,8 @@ GameObject:
   - component: {fileID: 1251100254201524282}
   - component: {fileID: 1251100254201524283}
   - component: {fileID: 893778743886214255}
-  m_Layer: 0
-  m_Name: Blue Trigger
+  m_Layer: 15
+  m_Name: Blue Sample Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4920,6 +4920,8 @@ MonoBehaviour:
   correctObjTrigger: {fileID: 0}
   puzzleCompleteSfx: {fileID: 8300000, guid: 6e0d8fb2424864743a0ab385d1cf733c, type: 3}
   puzzleCompleteSfxVolume: 0.5
+  puzzleDenySfx: {fileID: 8300000, guid: 8ff15f69a7a513d458e546331a7a3d79, type: 3}
+  puzzleDenySfxVolume: 0.5
 --- !u!82 &893778743886214255
 AudioSource:
   m_ObjectHideFlags: 0
