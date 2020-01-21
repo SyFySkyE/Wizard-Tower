@@ -4754,6 +4754,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuCanvas: {fileID: 1810254602}
   creditsCanvas: {fileID: 1957542273}
+  selectSfx: {fileID: 8300000, guid: 4f86370b68dfe8d4eb8c019854f4c58d, type: 3}
+  selectSfxVolume: 0.5
 --- !u!4 &487936648
 Transform:
   m_ObjectHideFlags: 0
@@ -19692,5 +19694,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 448659257958623890, guid: 660026d6802cc7d45953be038c19c5c7,
+        type: 3}
+      propertyPath: selectSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f86370b68dfe8d4eb8c019854f4c58d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 660026d6802cc7d45953be038c19c5c7, type: 3}

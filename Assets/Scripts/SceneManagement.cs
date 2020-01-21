@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
+    [SerializeField] private AudioClip selectSfx;
+    [SerializeField] private float selectSfxVolume = 0.5f;
+
     private PlayerHealth player;
 
     private void Start()
@@ -21,6 +24,7 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadNextScene()
     {
+        PlaySelectSfx();
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
         {
@@ -38,6 +42,7 @@ public class SceneManagement : MonoBehaviour
 
     public void Quit()
     {
+        PlaySelectSfx();
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
@@ -57,5 +62,10 @@ public class SceneManagement : MonoBehaviour
             ReloadCurrentScene();
         }
 #endif
+    }
+
+    private void PlaySelectSfx()
+    {
+        AudioSource.PlayClipAtPoint(selectSfx, Camera.main.transform.position, selectSfxVolume);
     }
 }
