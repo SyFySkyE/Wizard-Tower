@@ -10,6 +10,8 @@ public class TargetTrigger : MonoBehaviour
 
     private AudioSource puzzleAudioSource;
     private ParticleSystem puzzleCompleteVfx;
+    private Animator targetAnim;
+
     private bool hasCompleted = false;
 
     public event System.Action OnPuzzleComplete;
@@ -17,6 +19,7 @@ public class TargetTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        targetAnim = GetComponent<Animator>();
         puzzleCompleteVfx = GetComponentInChildren<ParticleSystem>();
         puzzleAudioSource = GetComponent<AudioSource>();
         this.tag = "Target";
@@ -30,11 +33,13 @@ public class TargetTrigger : MonoBehaviour
             puzzleCompleteVfx.Play();
             puzzleAudioSource.PlayOneShot(puzzleCompleteSfx, puzzleCompleteSfxVolume);
             hasCompleted = true;
+            targetAnim.SetTrigger("Shot");
         }
     }
 
     public void ResetPuzzle()
     {
+        targetAnim.SetTrigger("Reset");
         hasCompleted = false;
     }
 }
