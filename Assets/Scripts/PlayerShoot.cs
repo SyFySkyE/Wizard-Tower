@@ -10,12 +10,12 @@ public class PlayerShoot : MonoBehaviour
     [Header("Where the player shoots it")]
     [SerializeField] private Transform gunLocation;
 
-    private Animator playerAnim;
+    private Animator[] playerAnim;
     private bool canFire = true;
 
     private void Start()
     {
-        playerAnim = GetComponentInChildren<Animator>();
+        playerAnim = GetComponentsInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && canFire)
         {
             Instantiate(bullet, gunLocation.position, gunLocation.rotation);
-            playerAnim.SetTrigger("Fire");
+            playerAnim[1].SetTrigger("Fire");
         }
     }
 

@@ -35,6 +35,18 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene(nextSceneIndex);
     }
 
+    public void LoadNextSceneWithoutSfx()
+    {
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
+        {
+            nextSceneIndex--;
+            Debug.LogWarning("SceneManagement tried to load a scene with a build index greater than the number of scenes in Build Settings. Reloading scene...");
+            ReloadCurrentScene();
+        }
+        SceneManager.LoadScene(nextSceneIndex);
+    }
+
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
