@@ -17143,6 +17143,7 @@ GameObject:
   - component: {fileID: 679018498}
   - component: {fileID: 679018497}
   - component: {fileID: 679018496}
+  - component: {fileID: 679018500}
   m_Layer: 0
   m_Name: End Game
   m_TagString: Untagged
@@ -17206,6 +17207,8 @@ PlayableDirector:
     value: {fileID: 337856335}
   - key: {fileID: -3418299118890829366, guid: f7b32bc7dbe05ca48b72d199316a412c, type: 2}
     value: {fileID: 445756094}
+  - key: {fileID: -7121043024437566521, guid: f7b32bc7dbe05ca48b72d199316a412c, type: 2}
+    value: {fileID: 679018495}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &679018499
@@ -17227,6 +17230,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &679018500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679018495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: ea170e7623a8ce542a08a5cb2ebca167, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 679018497}
+          m_MethodName: EndTheGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!1 &683706413
 GameObject:
   m_ObjectHideFlags: 0
