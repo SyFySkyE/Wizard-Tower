@@ -2324,9 +2324,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "Technical Director:\tChris Grych\t\n\nCharacter Artist:\tThomas Cutrara\n\nMarketing/Props:\tValhalla
-    Villareal\n\nEnvironment Art/Props:\tSophia Alford\n\nSound/Game Design:\tDJ Stagen\n\nProduct
-    Owner/Level Design:\tRob Sandoval\n"
+  m_text: "Technical Director/Cinematics:\t        Chris Grych\t\n\nCharacter Artist:\t
+    \                 Thomas Cutrara\n\nMarketing/Props:\t                  Valhalla
+    Villareal\n\nEnvironment Art/Props:\t           Sophia Alford\n\nSound/Game Design:\t
+    \             DJ Stagen\n\nProduct Owner/Level Design:\t       Rob Sandoval\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3136fff4fc941b46bf86e7579a75c9e, type: 2}
   m_sharedMaterial: {fileID: 7549271298376483586, guid: a3136fff4fc941b46bf86e7579a75c9e,
