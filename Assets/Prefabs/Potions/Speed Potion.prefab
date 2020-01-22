@@ -95,7 +95,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 3754385cb3fba19468579e7dfdf4d577, type: 3}
+  - {fileID: 2100000, guid: c3f12bf63b069b64b9439bf098210e24, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -148,9 +148,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   potionType: 1
   speedUpSfx: {fileID: 8300000, guid: 3643387f977a5084ebad95fbd86125e9, type: 3}
-  speedUpSfxVolume: 0.5
+  speedUpSfxVolume: 0.3
   speedDownSfx: {fileID: 8300000, guid: 220a5cd9e3eeb554892b9c844614dea2, type: 3}
-  speedDownSfxVolume: 0.5
+  speedDownSfxVolume: 0.3
 --- !u!54 &1168140175
 Rigidbody:
   m_ObjectHideFlags: 0

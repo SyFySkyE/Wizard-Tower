@@ -20,16 +20,26 @@ public class Potion : MonoBehaviour
     private PlayerPotionEffects player;
     private Animator potionAnimator;
     private AudioSource potionAudioSource;
+    private Material currentMaterial;
 
     private bool isDrank = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentMaterial = GetComponent<Renderer>().material;
         potionAudioSource = GetComponent<AudioSource>();
         potionAnimator = GetComponent<Animator>();
         player = FindObjectOfType<PlayerPotionEffects>();
         breakParticles = GetComponentInChildren<ParticleSystem>();
+    }
+
+    private void Update()
+    {
+        if (!isDrank)
+        {
+            currentMaterial.color = Color.Lerp(Color.gray, Color.yellow, Mathf.PingPong(Time.time, 1));
+        }
     }
 
     public void Drink()
