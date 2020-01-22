@@ -21,7 +21,7 @@ public class LightSphere : MonoBehaviour
     {
         lightSphereAnim = GetComponent<Animator>();
         RaycastHit hitInfo = CastRay();
-
+        
         endPoint = hitInfo.point; // The light ball travels to whever the ray hits
 
         StartCoroutine(DestroySelfAfterTimer()); // In case something awful happens and the light ball never hits anything so there wouldn't be any lingering game objects.
@@ -37,7 +37,7 @@ public class LightSphere : MonoBehaviour
     {
         Ray cameraRay = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         RaycastHit hitInfo;
-
+        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward);
         if (Physics.Raycast(cameraRay, out hitInfo, Mathf.Infinity))
         {
             transform.position = Vector3.MoveTowards(transform.position, hitInfo.point, speed * Time.deltaTime); // TODO I have no idea why this is here
@@ -55,6 +55,7 @@ public class LightSphere : MonoBehaviour
             if (lastPos == transform.position && !isDying) // Fixes bug where if player spams multiple light spheres, the endpoint can be set to a position of a previous light sphere, so a light sphere would travel to the empty space and stay there. The !isDying check is made so this only happens once.
             {
                 lightSphereAnim.SetTrigger("Death");
+                Debug.Log("Dwdwd");
             }
         }
         else
@@ -65,7 +66,9 @@ public class LightSphere : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject);
         lightSphereAnim.SetTrigger("Death");
+        
     }
 
     public void Death()

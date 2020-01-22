@@ -149,6 +149,9 @@ MonoBehaviour:
   stareAtBed: {fileID: 8300000, guid: 4811d5e8a0453f84dae2a001a96a8634, type: 3}
   stairwellPictures: {fileID: 8300000, guid: 2d0c2ae2f35318741acadb3638a237e8, type: 3}
   stairwellPictures2: {fileID: 8300000, guid: 9767438daeccdd54a8c94395cc17b041, type: 3}
+  torchHint: {fileID: 8300000, guid: e143f89d698f8f8418163b0eed052ce1, type: 3}
+  seeVespera: {fileID: 8300000, guid: 09112d0824f5e354d82f17ff69564146, type: 3}
+  vesperaSpeak: {fileID: 8300000, guid: bf0f9961e86e4974497ecc086ece2e3e, type: 3}
   robVolume: 6
 --- !u!1 &1966147676
 GameObject:

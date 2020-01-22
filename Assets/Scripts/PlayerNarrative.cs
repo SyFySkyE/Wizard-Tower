@@ -13,6 +13,9 @@ public class PlayerNarrative : MonoBehaviour
     [SerializeField] private AudioClip stareAtBed;
     [SerializeField] private AudioClip stairwellPictures;
     [SerializeField] private AudioClip stairwellPictures2;
+    [SerializeField] private AudioClip torchHint;
+    [SerializeField] private AudioClip seeVespera;
+    [SerializeField] private AudioClip vesperaSpeak;
 
     [SerializeField] private float robVolume = 3f;
 
@@ -60,8 +63,17 @@ public class PlayerNarrative : MonoBehaviour
             case NarrativeTrigger.NarrativeState.StairwayPictures:
                 playerAudio.PlayOneShot(stairwellPictures, robVolume);
                 break;
-            case NarrativeTrigger.NarrativeState.StairwayPicturesTwo:
+            case NarrativeTrigger.NarrativeState.StairwayPicturesTwo:                
                 playerAudio.PlayOneShot(stairwellPictures2, robVolume);
+                break;
+            case NarrativeTrigger.NarrativeState.TorchHint:
+                playerAudio.PlayOneShot(torchHint, 1);
+                break;
+            case NarrativeTrigger.NarrativeState.SeeVespera:
+                playerAudio.PlayOneShot(seeVespera, robVolume);
+                break;
+            case NarrativeTrigger.NarrativeState.VesperaSpeak:
+                playerAudio.PlayOneShot(vesperaSpeak, robVolume);
                 break;
         }
     }

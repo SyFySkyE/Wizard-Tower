@@ -6,7 +6,7 @@ public class NarrativeTrigger : MonoBehaviour
 {
     public event System.Action<NarrativeState> OnNarrativeEvent;
 
-    public enum NarrativeState { FirstEnter, LookAtBookShelf, FirstDoor, SecondDoor, PassDaughters, DaughtersRoom, Bed, StairwayPictures, StairwayPicturesTwo }
+    public enum NarrativeState { FirstEnter, LookAtBookShelf, FirstDoor, SecondDoor, PassDaughters, DaughtersRoom, Bed, StairwayPictures, StairwayPicturesTwo, TorchHint, SeeVespera, VesperaSpeak }
 
     [SerializeField] private NarrativeState currentState;
 

@@ -11,11 +11,15 @@ public class DecorativePotion : MonoBehaviour
     private ParticleSystem breakParticles;
     private Animator potionAnim;
     private AudioSource potionAudioSource;
+    private BoxCollider[] colliders;
 
     private bool wasShot = false;
 
     private void Start()
     {
+        colliders = GetComponents<BoxCollider>();
+        colliders[0].enabled = true;
+        colliders[1].enabled = false;
         potionAudioSource = GetComponent<AudioSource>();
         potionAnim = GetComponent<Animator>();
         breakParticles = GetComponentInChildren<ParticleSystem>();
@@ -25,6 +29,7 @@ public class DecorativePotion : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            colliders[1].enabled = true;
             potionAudioSource.Stop();
             AudioSource.PlayClipAtPoint(breakSfx, transform.position, breakSfxVolume);
             potionAnim.SetTrigger("Break");
