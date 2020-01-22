@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7689225568626242125}
   - component: {fileID: 7689225568626242124}
   - component: {fileID: 1858038892}
+  - component: {fileID: 5595217933438362189}
   m_Layer: 11
   m_Name: Red Decorative Potion
   m_TagString: Untagged
@@ -97,7 +98,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 6348e96f79bccc84484973f52d3e3e2c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
-  m_Pitch: 1
+  m_Pitch: 1.05
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -180,6 +181,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &5595217933438362189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458147872039939877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 983.9053, y: 315.71008, z: 705.90393}
+  m_Center: {x: 4.1728144, y: -175.34499, z: -66.13236}
 --- !u!1 &4639208184732019369
 GameObject:
   m_ObjectHideFlags: 0

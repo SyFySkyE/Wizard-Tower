@@ -10,6 +10,7 @@ public class PlayerInteract : MonoBehaviour
 
     private Camera mainCamera;
     private PickupObject boxObj;
+    private Animator playerAnim;
 
     private enum PlayerState { isHolding, isReading, None }
     private PlayerState currentState = PlayerState.None;
@@ -23,10 +24,12 @@ public class PlayerInteract : MonoBehaviour
     public event System.Action<string> OnRead;
     public event System.Action OnDrink;
     public event System.Action OnNoContext; // No object close enough to show contextual UI tip
+    public event System.Action OnPotionSplash;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerAnim = GetComponent<Animator>();
         mainCamera = Camera.main;
     }
 
@@ -151,5 +154,11 @@ public class PlayerInteract : MonoBehaviour
             currentState = PlayerState.None;
             objForceDrop = false;
         }
+    }
+
+    public void SplashPotion()
+    {
+        OnPotionSplash();
+        playerAnim.SetTrigger("Splash");
     }
 }

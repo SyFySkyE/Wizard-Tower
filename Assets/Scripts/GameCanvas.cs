@@ -19,6 +19,7 @@ public class GameCanvas : MonoBehaviour
     {
         player = FindObjectOfType<PlayerInteract>();
         playerHeath = FindObjectOfType<PlayerHealth>();
+        player.OnPotionSplash += Player_OnPotionSplash;
         playerHeath.OnHurt += PlayerHeath_OnHurt;
         playerHeath.OnCameraDeath += PlayerHeath_OnCameraDeath;
         player.OnCanPickUp += Player_canPickUp;
@@ -28,6 +29,11 @@ public class GameCanvas : MonoBehaviour
         player.OnRead += Player_OnRead;
         player.OnCanDrink += Player_OnCanDrink;
         player.OnDrink += Player_OnDrink;
+    }
+
+    private void Player_OnPotionSplash()
+    {
+        canvasAnim.SetTrigger("Splash");
     }
 
     private void PlayerHeath_OnCameraDeath()

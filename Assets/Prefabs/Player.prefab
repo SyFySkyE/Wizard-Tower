@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 1622941775}
   - component: {fileID: 3305712939959755157}
   - component: {fileID: 2905367628571200532}
+  - component: {fileID: 1791861049}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -410,6 +411,25 @@ MonoBehaviour:
   healthPoints: 3
   secondsBeforeVulnerableAgain: 3
   secondsBeforeSceneReload: 3
+--- !u!95 &1791861049
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8968258135915753124}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d0359480795a674da7f484089121d9a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8968258135915753126
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,8 +532,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 8968258135917390978}
   motionBob:
-    HorizontalBobRange: 0.1
-    VerticalBobRange: 0.05
+    HorizontalBobRange: 1
+    VerticalBobRange: 0
     Bobcurve:
       serializedVersion: 2
       m_Curve:
