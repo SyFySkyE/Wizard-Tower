@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Chandlier : MonoBehaviour
 {
+    [SerializeField] private GameObject candleEffects;
+
     private ParticleSystem[] candles;
     private AudioSource candleAudioSource;
     private bool isLit = false;
@@ -21,7 +23,8 @@ public class Chandlier : MonoBehaviour
         {
             candleAudioSource.Play();
             foreach (ParticleSystem ps in candles)
-            {                
+            {
+                candleEffects.SetActive(true);
                 ps.Play();
                 isLit = true;
             }
