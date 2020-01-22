@@ -685,7 +685,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Project Wizard Tower
+  m_text: Twisted Tower
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2e4e58116f7a534999d4942ec387d0a, type: 2}
   m_sharedMaterial: {fileID: 1746896254431088650, guid: c2e4e58116f7a534999d4942ec387d0a,
@@ -755,10 +755,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 400050451}
-    characterCount: 20
+    characterCount: 13
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
