@@ -14,7 +14,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Start()
     {
-        playerAnim = GetComponent<Animator>();
+        playerAnim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
