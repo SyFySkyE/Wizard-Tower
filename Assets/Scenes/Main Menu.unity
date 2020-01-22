@@ -244,7 +244,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 150994943
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -346,8 +346,9 @@ GameObject:
   - component: {fileID: 169974213}
   - component: {fileID: 169974215}
   - component: {fileID: 169974214}
+  - component: {fileID: 169974216}
   m_Layer: 5
-  m_Name: Credits Button (1)
+  m_Name: Quit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,6 +411,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169974212}
   m_CullTransparentMesh: 0
+--- !u!95 &169974216
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169974212}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &292951449
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +544,7 @@ GameObject:
   - component: {fileID: 400050450}
   - component: {fileID: 400050452}
   - component: {fileID: 400050451}
+  - component: {fileID: 400050453}
   m_Layer: 5
   m_Name: Title Text
   m_TagString: Untagged
@@ -671,6 +692,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400050449}
   m_CullTransparentMesh: 0
+--- !u!95 &400050453
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400050449}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &487936646
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +769,7 @@ GameObject:
   - component: {fileID: 520966736}
   - component: {fileID: 520966738}
   - component: {fileID: 520966737}
+  - component: {fileID: 520966739}
   m_Layer: 5
   m_Name: Credits Button
   m_TagString: Untagged
@@ -793,6 +834,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520966735}
   m_CullTransparentMesh: 0
+--- !u!95 &520966739
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520966735}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &592966592
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +977,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 150994943
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1440,6 +1500,7 @@ GameObject:
   - component: {fileID: 992811646}
   - component: {fileID: 992811648}
   - component: {fileID: 992811647}
+  - component: {fileID: 992811649}
   m_Layer: 5
   m_Name: Start Button
   m_TagString: Untagged
@@ -1504,6 +1565,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992811645}
   m_CullTransparentMesh: 0
+--- !u!95 &992811649
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992811645}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1000943686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2330,30 +2410,18 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -4860037117613957766, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
     value: {fileID: 1615849560}
-  - key: {fileID: -8352280525628767958, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
-    value: {fileID: 1810254602}
-  - key: {fileID: 4779940473129273343, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
-    value: {fileID: 1810254607}
-  - key: {fileID: -5863095440915821419, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
+  - key: {fileID: -1443511315938630344, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
     value: {fileID: 1265893089}
-  - key: {fileID: 7944127330831869203, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
+  - key: {fileID: -1764438840132585307, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
+    value: {fileID: 992811649}
+  - key: {fileID: -1370254053886291773, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
+    value: {fileID: 520966739}
+  - key: {fileID: -3364787454567988517, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
+    value: {fileID: 169974216}
+  - key: {fileID: -7946591705062707376, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
     value: {fileID: 1000943686}
-  - key: {fileID: -3098048360387154133, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
-    value: {fileID: 1000943687}
-  - key: {fileID: -7300808717123919214, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
-    value: {fileID: 595480063}
-  - key: {fileID: 7800777652048689929, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
-    value: {fileID: 1553867570}
-  - key: {fileID: 1479757132300044434, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
-    value: {fileID: 1168558462}
-  - key: {fileID: -7712651794917749168, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
-    value: {fileID: 1992791959}
-  - key: {fileID: -9206737393132058817, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
-    value: {fileID: 1068620850}
-  - key: {fileID: 9183820241151833596, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
-    value: {fileID: 1992791960}
-  - key: {fileID: -6227156722375700650, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
-    value: {fileID: 1992437894}
+  - key: {fileID: 7892452731636858637, guid: f8f39bf8a9668434da243321bf47a501, type: 2}
+    value: {fileID: 400050453}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1615849563
@@ -2514,7 +2582,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 150994943
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
