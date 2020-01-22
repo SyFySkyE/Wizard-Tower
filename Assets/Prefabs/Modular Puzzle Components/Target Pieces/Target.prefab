@@ -4857,8 +4857,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5703867, y: 0.5906778, z: 2.1556687}
+  m_Center: {x: 0.027451992, y: 0.006898731, z: 0.5778364}
 --- !u!114 &2013150496531926106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5559,7 +5559,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: fb0926050f4d4834090628b3621f8f52,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.43
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fb0926050f4d4834090628b3621f8f52,
         type: 3}
