@@ -16,6 +16,7 @@ public class DoorPuzzle : MonoBehaviour // TODO Tech debt is pretty high in this
     private AudioSource dooraudiosource;
     private Animator doorAnim;
     private UnityEngine.UI.Slider progressSlider;
+    private TMPro.TextMeshProUGUI progressText;
 
     private int numberOfConditions = 0;
     private int numberOfConditionsMet = 0;
@@ -26,18 +27,24 @@ public class DoorPuzzle : MonoBehaviour // TODO Tech debt is pretty high in this
 
     // Start is called before the first frame update
     void Start()
-    {        
+    {
+        progressText = GetComponentInChildren<TMPro.TextMeshProUGUI>();
         doorAnim = GetComponent<Animator>();        
         dooraudiosource = GetComponent<AudioSource>();
         progressSlider = GetComponentInChildren<UnityEngine.UI.Slider>();
-        SubscribeToPuzzleConditions();        
+        SubscribeToPuzzleConditions();
+        CaculateStartProgressText();
+        if (secondsBeforePuzzleReset == 0)
+        {
+            progressSlider.gameObject.SetActive(false);
+        }        
     }
 
     private void SubscribeToPuzzleConditions()
     {
         numberOfConditions = correctObjConditions.Length + targetConditions.Length;
         progressSlider.maxValue = numberOfConditions;
-        
+
         foreach (TargetTrigger trigger in targetConditions)
         {
             trigger.OnPuzzleComplete += Trigger_OnPuzzleComplete;
@@ -50,10 +57,20 @@ public class DoorPuzzle : MonoBehaviour // TODO Tech debt is pretty high in this
         }
     }
 
+    private void CaculateStartProgressText()
+    {
+        progressText.text = "";
+        for (int i = 0; i < numberOfConditions; i++)
+        {
+            progressText.text += " X ";
+        }
+    }
+
     private void Trigger_OnPuzzleComplete()
     {
         numberOfConditionsMet++;
         progressSlider.value++;
+        progressText.text = progressText.text.Remove(0, 3);
         if (numberOfConditionsMet == numberOfConditions)
         {
             SolvePuzzle();
@@ -120,6 +137,7 @@ public class DoorPuzzle : MonoBehaviour // TODO Tech debt is pretty high in this
             numberOfConditionsMet = correctObjConditions.Length;
             progressSlider.maxValue = numberOfConditions;
             progressSlider.value = numberOfConditionsMet;
+            CaculateStartProgressText();
             doorAnim.SetTrigger("Close");
             isSolved = false;
         }        
