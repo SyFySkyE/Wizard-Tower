@@ -14,9 +14,11 @@ public class GameCanvas : MonoBehaviour
     private PlayerInteract player;
     private PlayerHealth playerHeath;
     private Animator canvasAnim;
+    private UnityEngine.UI.Image fpDot;
 
     private void OnEnable()
     {
+        fpDot = GetComponentInChildren<UnityEngine.UI.Image>();
         player = FindObjectOfType<PlayerInteract>();
         playerHeath = FindObjectOfType<PlayerHealth>();
         player.OnPotionSplash += Player_OnPotionSplash;
@@ -85,5 +87,10 @@ public class GameCanvas : MonoBehaviour
     void Start()
     {
         canvasAnim = GetComponent<Animator>();
+    }
+
+    public void CutSceneRestrictions()
+    {
+        fpDot.enabled = false;
     }
 }

@@ -161,4 +161,9 @@ public class PlayerInteract : MonoBehaviour
         OnPotionSplash();
         playerAnim.SetTrigger("Splash");
     }
+
+    public void EndCutscene()
+    {
+        mainCamera.enabled = false;
+    }
 }

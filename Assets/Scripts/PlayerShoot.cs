@@ -11,6 +11,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private Transform gunLocation;
 
     private Animator playerAnim;
+    private bool canFire = true;
 
     private void Start()
     {
@@ -20,10 +21,20 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && canFire)
         {
             Instantiate(bullet, gunLocation.position, gunLocation.rotation);
             playerAnim.SetTrigger("Fire");
         }
+    }
+
+    public void StartCutsceneRestriction()
+    {
+        canFire = false;
+    }
+
+    public void DisableCutsceneRestriction()
+    {
+        canFire = true;
     }
 }

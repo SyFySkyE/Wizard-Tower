@@ -261,5 +261,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_Jumping = false;
             }
         }
+
+        public void DisableMove()
+        {
+            movementSettings.BackwardSpeed = 0f;
+            movementSettings.ForwardSpeed = 0f;
+            movementSettings.StrafeSpeed = 0f;
+        }
     }
 }
