@@ -16,4 +16,9 @@ public class StartCutscene : MonoBehaviour
     {
         timeline.Play();
     }
+
+    private void Update()
+    {
+        // Logic for skipping cutscene ie timeline.time = timeline.duration;
+    }
 }
