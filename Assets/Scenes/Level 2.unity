@@ -25987,7 +25987,7 @@ PrefabInstance:
     - target: {fileID: 7086097178205261745, guid: 843563bfd260f5c498b9c6221a07824c,
         type: 3}
       propertyPath: secondsBeforePuzzleReset
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 829692023, guid: 843563bfd260f5c498b9c6221a07824c, type: 3}
       propertyPath: m_AnchorMax.y
