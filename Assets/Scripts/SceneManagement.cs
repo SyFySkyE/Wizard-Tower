@@ -52,6 +52,11 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void LoadScene(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
     public void Quit()
     {
         PlaySelectSfx();

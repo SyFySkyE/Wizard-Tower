@@ -21,6 +21,9 @@ public class EndGame : MonoBehaviour
 
     public void EndTheGame()
     {
+#if UNITY_WEBGL
+        FindObjectOfType<SceneManagement>().LoadScene(0);
+#endif
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
